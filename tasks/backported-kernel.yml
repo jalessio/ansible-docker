@@ -3,7 +3,7 @@
 - name: install backported kernel
   apt:
     name: "{{ item }}"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
   with_items: "{{ docker_backported_kernel_packages }}"
   register: backported_kernel_result
   tags:

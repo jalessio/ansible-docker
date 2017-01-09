@@ -20,7 +20,7 @@
 - name: install dependencies (pre)
   apt:
     name: "{{ item }}"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
   with_items: "{{ docker_dependencies_pre }}"
   when: item != ''
   tags:
@@ -37,7 +37,7 @@
 - name: install dependencies
   apt:
     name: "{{ item }}"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
   with_items: "{{ docker_dependencies }}"
   notify: restart docker
   tags:
