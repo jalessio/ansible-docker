@@ -32,7 +32,7 @@ export http_proxy="{{ docker_etc_default_http_proxy }}"
 
 # This is also a handy place to tweak where Docker's temporary files go.
 {% if docker_etc_default_tmpdir is defined %}
-export TMPDIR="{{ docker_etc_default_tmpdir }}"
+export DOCKER_TMPDIR="{{ docker_etc_default_tmpdir }}"
 {% else %}
-#export TMPDIR="/mnt/bigdrive/docker-tmp"
+#export DOCKER_TMPDIR="/mnt/bigdrive/docker-tmp"
 {% endif %}
