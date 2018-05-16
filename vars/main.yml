@@ -21,7 +21,7 @@ docker_apt_repository:
     component: main
 
 docker_dependencies:
-  - docker-ce
+  - docker-engine
 
 docker_ufw_default_file: /etc/default/ufw
 docker_updatedb_file: /etc/updatedb.conf
